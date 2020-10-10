@@ -7,44 +7,140 @@ excerpt: Women Dev Summit é a maior conferência de Mulheres na Tecnologia no B
 {% include navbar.html %}
 
 <section class="hero">
-    <div id="" class="d-flex flex-column flex-justify-center height-full text-white mx-auto hero-content hero-margin">
-      <img class="img-responsive mx-auto" width="450" src="assets/images/logo.png" alt="Women Dev Summit" />
-      
+  <div id="" class="d-flex flex-column flex-justify-center height-full text-white mx-auto hero-content hero-margin">
+    <img class="img-responsive mx-auto" width="450" src="assets/images/logo.png" alt="Women Dev Summit" />
 
-      <div class="pt-4 mx-auto text-center">
-        <a href="#" class="btn mb-2 mb-md-0 mr-2">
-          English stream
-        </a>
-        <a href="#" class="btn mb-2 mb-md-0 mr-2">
-          Español stream
-        </a>
-        <a href="#" class="btn mb-2 mb-md-0">
-          Português stream
-        </a>
-      </div>
-      
-      <div class="d-sm-flex flex-items-center flex-justify-center col-md-9 col-lg-8 mx-auto mt-4 py-4 border-top border-white">
-        <div class="col-6 mb-2 mb-sm-2 col-sm-4 mr-sm-4">
-          <h2 class="h2">28 e 29 de Novembro</h2>
-        </div>
-        
-        <div class="col-sm-8">          
-          <p class="f4">
-            /* to do */
-          </p>          
-        </div>
-      </div>
-    
+
+    <div class="pt-4 mx-auto text-center">
+      <a href="#" class="btn mb-2 mb-md-0 mr-2">
+        English stream
+      </a>
+      <a href="#" class="btn mb-2 mb-md-0 mr-2">
+        Español stream
+      </a>
+      <a href="#" class="btn mb-2 mb-md-0">
+        Português stream
+      </a>
     </div>
-  </section>
 
-  <section id="about" class=" text-md-center col-sm-10 col-md-8 col-lg-6 mx-auto my-6 py-6 p-responsive">
-    <h1 class="pt-4 h1 mb-1">Women Dev Summit</h1>
-  
-    <p class="f2-light">
-      Women Dev Summit é um coletivo formado por quatro das maiores comunidades femininas de tecnologia (Rails Girls, PHPWomen, WoMakersCode e Desprograme) com o objetivo de fornecer uma base técnica e também direcionamento de carreira para que mais mulheres possam ingressar no mundo de TI. O nosso Girl Power significa representatividade em uma inclusiva e acolhedora experiência para mulheres aprenderem, criarem networking e lutarem por seus sonhos e conquistarem o mundo.
-      Nesta edição online e gratuita, nos dias 28 e 29 de Novembro, vamos aprender e debater sobre tecnologia, carreira e resiliência, em Português, Inglês e Espanhol.
-    </p>
+    <div
+      class="d-sm-flex flex-items-center flex-justify-center col-md-9 col-lg-8 mx-auto mt-4 py-4 border-top border-white">
+      <div class="col-6 mb-2 mb-sm-2 col-sm-4 mr-sm-4">
+        <h2 class="h2">28 e 29 de Novembro</h2>
+      </div>
 
-    <p class="f0-light">Juntas e para fazer a diferança. <br/>Do Brasil, para o mundo inteiro!</p>
-  </section>
+      <div class="col-sm-8">
+        <p class="f4">
+          /* to do */
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class=" text-md-center col-sm-10 col-md-8 col-lg-8 mx-auto my-8 py-8 p-responsive">
+  <h1 class="pt-4 h1 mb-1">Women Dev Summit</h1>
+
+  <p class="f2-light">
+    Women Dev Summit é um coletivo formado por quatro das maiores comunidades femininas de tecnologia (Rails Girls,
+    PHPWomen, WoMakersCode e Desprograme) com o objetivo de fornecer uma base técnica e também direcionamento de
+    carreira para que mais mulheres possam ingressar no mundo de TI. O nosso Girl Power significa representatividade em
+    uma inclusiva e acolhedora experiência para mulheres aprenderem, criarem networking e lutarem por seus sonhos e
+    conquistarem o mundo.
+    Nesta edição online e gratuita, nos dias 28 e 29 de Novembro, vamos aprender e debater sobre tecnologia, carreira e
+    resiliência, em Português, Inglês e Espanhol.
+  </p>
+
+  <p class="f0-light">Juntas e para fazer a diferança. <br />Do Brasil, para o mundo inteiro!</p>
+</section>
+
+
+<section id="speakers" class="my-8 py-8">
+  <h2 class="h1 mx-auto mb-8 pt-2 p-responsive text-md-center">
+    Speakers
+  </h2>
+
+  <div class="d-flex flex-justify-center flex-wrap mx-md-auto col-12 col-md-10 col-lg-10 p-responsive">
+
+    {% assign work_items = site.data.palestrante | sort: 'order' %}
+    {% for item in work_items %}
+
+    <div class="col-6 col-sm-5 col-md-4 col-xl-3 speaker-profile mb-5">
+      <details class="details-reset details-overlay details-overlay-dark overflow-hidden">
+        <summary class="text-md-center pr-2 pr-md-0">
+          <div
+            class="speaker-profile-img d-flex flex-justify-center flex-items-center position-relative circle mx-md-auto mb-2">
+
+            <img src="{{ item.attachments[0].url }}" alt="{{ item.name }}" class="width-fit rounded-1">
+          </div>
+          <h3 class="h2-mktg mt-3 mb-1 pr-2 pr-md-0 lh-condensed-ultra">
+            {{ item.name }}
+          </h3>
+          <p class="f4 pr-2 pr-md-0">
+            {{ item.title }}
+          </p>
+        </summary>
+        <details-dialog
+          class="details-dialog col-10 col-sm-9 col-lg-7 col-xl-6 p-4 p-md-6 Box Box--overlay anim-fade-in fast"
+          aria-label="{{ item.name }}" aria-modal="true" tabindex="-1">
+          <button type="button" class="btn-octicon position-absolute top-0 right-0 m-3" data-close-dialog>
+            <svg height="16" class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z">
+              </path>
+            </svg>
+          </button>
+          <div class="d-md-flex flex-row-reverse flex-md-row">
+            <div class="col-5 col-md-3 mb-2 mb-md-0">
+              <img src="{{ item.attachments[0].url }}" alt="{{ item.name }}" class="width-fit rounded-1">
+            </div>
+
+            <div class="col-md-8 ml-md-6">
+              <div class="mb-4 pb-2 border-bottom">
+                <h3 class="h2 mb-1 lh-condensed">
+                  {{ item.name }}
+                  ({{ item.pronums }})
+                </h3>
+                <ul class="list-style-none d-flex flex-wrap">
+                  <li class="mr-3">
+                    <svg height="16" class="octicon octicon-organization" viewBox="0 0 16 16" version="1.1" width="16"
+                      aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088C9.196 9.369 10 8.999 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4z">
+                      </path>
+                    </svg>
+                    {{ item.title }}
+                  </li>
+                  <li class="mr-3">
+                    <a href="{{ item.linkedin }}" class="link-gray-dark">
+                      <img src="assets/images/linkedin.svg" width="16" class="octicon octicon-mark-github"
+                        title="LinkedIn" />
+                      {{ item.name }}
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="{{ item.twitter }}" class="link-gray-dark">
+                      <img src="assets/images/twitter.svg" width="16" class="octicon octicon-mark-github"
+                        title="Twitter" />
+                      {{ item.name }}
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+
+              <h4 class="h3">{{ item.talk-title }}</h4>
+              <p class="col-12 f4 mb-2 lh-condensed">
+                {{ item.talk-language }}
+              </p>
+            </div>
+          </div>
+        </details-dialog>
+      </details>
+    </div>
+
+    {% endfor %}
+
+  </div>
+</section>
